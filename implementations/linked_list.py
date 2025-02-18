@@ -36,7 +36,33 @@ class LinkedList:
         self.head = None # Clear the linked list
         for data in data_list:
             self.inserting_at_end(data)
+    
+    def get_length(self):
+        count = 0 
+        itr = self.head
+        while itr:
+            count +=1 
+            itr = itr.next
+        return count # big O(n) operation as we need to traverse the linked list to get the length
+    
+    def remove_at(self, index):
+        if index < 0 or index >= self.get_length():
+            raise Exception("Invalid index")
         
+        if index == 0:
+            self.head = self.head.next  # Remove head
+            return
+
+        count = 0
+        itr = self.head
+        while itr:
+            if count == index - 1:
+                itr.next = itr.next.next  # Works for all cases (middle & last node)
+                break
+
+            itr = itr.next
+            count += 1
+
 if __name__ == "__main__":
     ll = LinkedList()
     # ll.insert_at_beginning(5)
@@ -46,5 +72,7 @@ if __name__ == "__main__":
     # ll.inserting_at_end(200)
     
     ll.insert_values([45, 7, 12, 567, 99])
+    ll.print()
+    ll.remove_at(4)
     ll.print()
     
