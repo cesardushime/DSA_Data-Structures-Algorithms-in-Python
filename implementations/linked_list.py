@@ -31,14 +31,20 @@ class LinkedList:
         while itr.next: # Traverse the linked list until the last node (where next is None)
             itr = itr.next
         itr.next = Node(data, None) # Assign the new node to the next of the last node, hence big O(n) operation; traverse the linked list before inserting the new node
-            
+    
+    def insert_values(self, data_list):
+        self.head = None # Clear the linked list
+        for data in data_list:
+            self.inserting_at_end(data)
         
 if __name__ == "__main__":
     ll = LinkedList()
-    ll.insert_at_beginning(5)
-    ll.insert_at_beginning(89)
-    ll.insert_at_beginning(12)
-    ll.inserting_at_end(100)
-    ll.inserting_at_end(200)
+    # ll.insert_at_beginning(5)
+    # ll.insert_at_beginning(89)
+    # ll.insert_at_beginning(12)
+    # ll.inserting_at_end(100)
+    # ll.inserting_at_end(200)
+    
+    ll.insert_values([45, 7, 12, 567, 99])
     ll.print()
     
