@@ -57,7 +57,7 @@ class LinkedList:
         itr = self.head
         while itr:
             if count == index - 1:
-                itr.next = itr.next.next  # Works for all cases (middle & last node)
+                itr.next = itr.next.next  # Works for all cases (middle & last node), big O(n) operation because we need to traverse the linked list to the node before the node to be removed
                 break
 
             itr = itr.next
@@ -74,8 +74,8 @@ class LinkedList:
         itr = self.head
         while itr:
             if count == index - 1:
-                node = Node(data, itr.next)
-                itr.next = node
+                node = Node(data, itr.next) 
+                itr.next = node # big O(n) operation because we need to traverse the linked list to the node before the node to be inserted
                 break
             itr = itr.next
             count += 1
