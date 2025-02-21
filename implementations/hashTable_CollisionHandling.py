@@ -25,12 +25,16 @@ class HashTable:
             
     def __getitem__(self, key): # allows us to use the index operator to get the value of a key
         h = self.get_hash(key)
-        return self.arr[h] # Returns the value at the hash index, big O(1) operation
+        for element in self.arr[h]:
+            if element[0] == key: # resolves the issue of collision handling by checking if the key is the same
+                return element[1] # returns the value of the key, big O(n) operation because we need to traverse the list at the hash index
+        return self.arr[h] 
     
-    def del_item(self, key):
+    def __delitem__(self, key):
         h = self.get_hash(key)
-        self.arr[h] = None # Deletes the value at the hash index, big O(1) operation
-        
+        for index, element in enumerate(self.arr[h]):
+            if element[0] == key:
+                del self.arr[h][index] # deletes the key-value pair at the hash index, big O(n) operation because we need to traverse the list at the hash index
         
 t = HashTable()
 
@@ -39,13 +43,13 @@ t = HashTable()
 # print(t.get_hash('march 21')) # 54
 
 
-
-t['march 6'] = 130 # 9
 t['march 17'] = 459 # 63
 t['march 21'] = 140 # 54
 t['march 12'] = 440 # 54, same hash index as march 21
-
+del t['march 12']
+del t['march 21']
 
 print(t['march 17']) 
-print(t['march 21']) # will return a list of tuples [('march 21', 140), ('march 12', 440)], as both keys have the same hash index
+print(t['march 21'])
+print("Now:", t['march 12']) # returns 440 because it was the last value stored at the hash index
 
