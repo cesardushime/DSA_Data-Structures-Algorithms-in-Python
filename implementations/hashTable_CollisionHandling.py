@@ -51,5 +51,5 @@ del t['march 21']
 
 print(t['march 17']) 
 print(t['march 21'])
-print("Now:", t['march 12']) # returns 440 because it was the last value stored at the hash index
+print(t['march 12']) # returns 440 because it was the last value stored at the hash index
 
