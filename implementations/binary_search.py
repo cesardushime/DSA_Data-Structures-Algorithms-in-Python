@@ -24,9 +24,23 @@ def binary_search(arr, target):
             right_index = mid_index - 1
     return -1
     
-
+def binary_search_recursive(arr, target, left_index, right_index):
+    
+    if left_index > right_index:
+        return -1
+    
+    mid_index = (left_index + right_index) // 2
+    mid_number = arr[mid_index]
+    
+    if mid_number == target:
+        return mid_index
+    if mid_number < target:
+        return binary_search_recursive(arr, target, mid_index + 1, right_index)
+    else:
+        return binary_search_recursive(arr, target, left_index, mid_index - 1)
+    
 
 if __name__ == '__main__':
     mylist = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 
-    print(binary_search(mylist, 100))  # 9
+    print(binary_search_recursive(mylist, 10, 0, len(mylist)-1))  # 9
