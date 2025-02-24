@@ -1,4 +1,3 @@
-import time
 
 def linear_search(arr, target):
     for i, val in enumerate(arr):
