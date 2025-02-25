@@ -12,7 +12,7 @@ Welcome to my **Data Structures & Algorithms (DSA) journey** using Python! This 
 
 ### 🔹 Week 2: Linked Lists & Stacks
 - [ ] Singly & Doubly Linked Lists
-- [ ] Stack (LIFO) & Queue (FIFO)
+- [X] Stack (LIFO) & Queue (FIFO)
 
 ### 🔹 Week 3: Trees & Graphs
 - [ ] Binary Trees & Binary Search Trees
