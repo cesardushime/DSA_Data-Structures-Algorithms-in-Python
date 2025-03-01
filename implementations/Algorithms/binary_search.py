@@ -25,7 +25,7 @@ def binary_search(arr, target):
     
 def binary_search_recursive(arr, target, left_index, right_index):
     
-    if left_index > right_index:
+    if left_index > right_index: # Means the target is not in the list because the left index has crossed the right index
         return -1
     
     mid_index = (left_index + right_index) // 2
