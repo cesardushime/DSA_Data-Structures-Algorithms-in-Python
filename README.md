@@ -7,11 +7,11 @@ Welcome to my **Data Structures & Algorithms (DSA) journey** using Python! This 
 ### 🔹 Week 1: Fundamentals
 - [x] Big O Notation (Time & Space Complexity)
 - [x] Arrays (Operations, Accessing, Searching, Slicing)
-- [ ] Sorting Algorithms (Bubble Sort, Merge Sort, QuickSort)
-- [ ] Recursion Basics
+- [X] Sorting Algorithms (Bubble Sort, Merge Sort, QuickSort)
+- [X] Recursion Basics
 
 ### 🔹 Week 2: Linked Lists & Stacks
-- [ ] Singly & Doubly Linked Lists
+- [X] Singly & Doubly Linked Lists
 - [X] Stack (LIFO) & Queue (FIFO)
 
 ### 🔹 Week 3: Trees & Graphs
@@ -19,7 +19,7 @@ Welcome to my **Data Structures & Algorithms (DSA) journey** using Python! This 
 - [ ] Graphs & BFS/DFS Traversals
 
 ### 🔹 Week 4: Advanced DSA & Interview Prep
-- [ ] Dynamic Programming (Memoization, Tabulation)
+- [X] Dynamic Programming (Memoization, Tabulation)
 - [ ] Greedy Algorithms & Backtracking
 - [ ] Common Coding Interview Problems
 
