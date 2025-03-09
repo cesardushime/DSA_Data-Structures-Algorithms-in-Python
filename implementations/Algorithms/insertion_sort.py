@@ -13,4 +13,7 @@ if __name__=='__main__':
     elements = [11, 9, 29, 7, 2,1,23, 15, 28]
     print(insertion_sort(elements)) # [2, 7, 9, 11, 15, 28, 29]
     
+    elements = [11, 9, 29, 7, 2,1,23, 15, 28, 1]
+    print(insertion_sort(elements)) # [1, 1, 2, 7, 9, 11, 15, 23, 28, 29]
+    
     
