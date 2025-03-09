@@ -24,3 +24,5 @@ def running_median(sequence):
 if __name__ == '__main__':
     sequence = [2, 1, 5, 7, 2, 0, 5]
     print(running_median(sequence)) # [2, 1.5, 2, 3.5, 2, 2, 2]
+    
+

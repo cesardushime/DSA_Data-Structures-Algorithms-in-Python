@@ -9,7 +9,8 @@ def insertion_sort(arr):
         arr[j+1] = anchor # 
     return arr
 
-
 if __name__=='__main__':
     elements = [11, 9, 29, 7, 2,1,23, 15, 28]
     print(insertion_sort(elements)) # [2, 7, 9, 11, 15, 28, 29]
+    
+    

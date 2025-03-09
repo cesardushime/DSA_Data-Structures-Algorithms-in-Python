@@ -5,10 +5,10 @@ class Queue:
         self.queue = deque()
         
     def enqueue(self, item):
-        self.queue.appendleft(item)
+        self.queue.appendleft(item) # big O(1) operation because we are adding to the left of the deque
     def dequeue(self):
         if not self.is_empty():
-            return self.queue.pop()
+            return self.queue.pop() # big O(1) operation because we are removing just the last element
         return "Queue is empty"
     def is_empty(self):
         return len(self.queue) == 0

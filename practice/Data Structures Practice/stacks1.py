@@ -4,7 +4,7 @@ def is_balanced(mystring):
     
     for bracket in mystring:
         if bracket in matching:  # Closing bracket
-            if not stack or stack.pop() != matching[bracket]:
+            if not stack or stack.pop() != matching[bracket]: 
                 return False  # Mismatch or empty stack
         elif bracket in matching.values():  # Opening bracket
             stack.append(bracket)  # Push to stack
