@@ -1,4 +1,4 @@
-def mergeSort(a,b):
+def merge2_sortedArrays(a,b):
     sort_list = []
     
     len_a = len(a)
@@ -13,12 +13,6 @@ def mergeSort(a,b):
             sort_list.append(b[j])
             j += 1
             
-    while i < len_a:
-        sort_list.append(a[i])
-        i += 1
-    while j < len_b:
-        sort_list.append(b[j])
-        j += 1
     return sort_list
     
 
