@@ -14,7 +14,7 @@ def merge2_sortedArrays(a,b, arr):
     
     len_a = len(a)
     len_b = len(b)
-    i = j = k = 0
+    i = j = k = 0 # i for a (left array), j for b (right array), k for arr (merged array)
     
     while i < len_a and j < len_b:
         if a[i] <= b[j]:
