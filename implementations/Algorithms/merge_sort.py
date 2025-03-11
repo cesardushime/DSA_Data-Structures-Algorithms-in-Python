@@ -36,7 +36,14 @@ def merge2_sortedArrays(a,b, arr):
     
 
 if __name__ == '__main__':
-    # Unsorted array
-    arr = [3, 7, 1, 8, 2, 4, 5, 6, 10, 0]
-    mergeSort(arr)
-    print(arr) # [1, 2, 3, 4, 5, 6, 7, 8]
+    # Testing with mixed and nested lists
+    testCases = [
+        [1, 2, 3, 4, 5, 6, 7, 8],
+        [8, 7, 6, 5, 4, 3, 2, 1],
+        [1, 3, 5, 7, 2, 4, 6, 8],
+        [],
+    ]
+    
+    for arr in testCases:
+        mergeSort(arr)
+        print(arr) # [1, 2, 3, 4, 5, 6, 7, 8] [1, 2, 3, 4, 5, 6, 7, 8] [1, 2, 3, 4, 5, 6, 7, 8] []
