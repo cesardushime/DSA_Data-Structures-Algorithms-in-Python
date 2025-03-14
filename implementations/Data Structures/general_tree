@@ -1,0 +1,80 @@
+class TreeNode: 
+    def __init__(self, data):
+        self.data = data
+        self.children = []
+        self.parent = None
+
+
+    def add_child(self, child):
+        child.parent = self
+        self.children.append(child)
+    
+    def print_tree(self):
+        print(self.data)
+        if len(self.children) > 0:
+            for child in self.children:
+                child.print_tree()
+
+    def get_level(self):
+        level = 0
+        p = self.parent
+        while p:
+            level += 1
+            p = p.parent
+        return level
+
+def build_product_tree():
+    laptop = TreeNode("Laptops")
+    laptop.add_child(TreeNode("Mac"))
+    laptop.add_child(TreeNode("Surface"))
+    laptop.add_child(TreeNode("Thinkpad"))
+    laptop.add_child(TreeNode("Dell"))
+    laptop.add_child(TreeNode("HP"))
+    laptop.add_child(TreeNode("Acer"))
+    laptop.add_child(TreeNode("Lenovo"))
+    laptop.add_child(TreeNode("Asus"))
+    laptop.add_child(TreeNode("MSI"))
+    laptop.add_child(TreeNode("Razer"))
+    laptop.add_child(TreeNode("Samsung"))
+    laptop.add_child(TreeNode("LG"))
+
+
+    cellphone = TreeNode("Cell Phones")
+    cellphone.add_child(TreeNode("iPhone"))
+    cellphone.add_child(TreeNode("Google Pixel"))
+    cellphone.add_child(TreeNode("Samsung"))
+    cellphone.add_child(TreeNode("LG"))
+    cellphone.add_child(TreeNode("OnePlus"))
+    cellphone.add_child(TreeNode("Motorola"))
+    cellphone.add_child(TreeNode("Nokia"))
+    cellphone.add_child(TreeNode("Sony"))
+    cellphone.add_child(TreeNode("HTC"))
+    cellphone.add_child(TreeNode("Huawei"))
+    cellphone.add_child(TreeNode("ZTE"))
+    cellphone.add_child(TreeNode("Xiaomi"))
+    cellphone.add_child(TreeNode("Oppo"))
+    cellphone.add_child(TreeNode("Vivo"))
+
+    tv = TreeNode("Televisions")
+    tv.add_child(TreeNode("Samsung"))
+    tv.add_child(TreeNode("LG"))
+    tv.add_child(TreeNode("Sony"))
+    tv.add_child(TreeNode("Vizio"))
+    tv.add_child(TreeNode("TCL"))
+    tv.add_child(TreeNode("Hisense"))
+    tv.add_child(TreeNode("Sharp"))
+    tv.add_child(TreeNode("Panasonic"))
+    tv.add_child(TreeNode("Toshiba"))
+    tv.add_child(TreeNode("Sanyo"))
+    tv.add_child(TreeNode("Philips"))
+
+    root = TreeNode("Electronics")
+    root.add_child(laptop)
+    root.add_child(cellphone)
+    root.add_child(tv)
+
+    return root # has value "Electronics" and children as laptop, cellphone, tv
+if __name__== '__main__':
+    root = build_product_tree()
+    
+    print(root.get_level())

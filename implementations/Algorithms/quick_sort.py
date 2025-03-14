@@ -6,7 +6,7 @@ def quick_sort(arr, left, right):
         quick_sort(arr, partition_index + 1, right)  
 
 def partition(arr, left, right):
-    pivot = arr[right]  
+    pivot = arr[right]   
     i = left  # i starts at the leftmost element
     j = right - 1  # j starts at the element before the pivot
     
