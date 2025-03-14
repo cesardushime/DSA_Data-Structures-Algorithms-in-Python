@@ -10,7 +10,9 @@ class TreeNode:
         self.children.append(child)
     
     def print_tree(self):
-        print(self.data)
+        spaces = ' ' * self.get_level()
+        prefix = spaces + "|--" if self.parent else ""
+        print(prefix + self.data)
         if len(self.children) > 0:
             for child in self.children:
                 child.print_tree()
@@ -30,43 +32,18 @@ def build_product_tree():
     laptop.add_child(TreeNode("Thinkpad"))
     laptop.add_child(TreeNode("Dell"))
     laptop.add_child(TreeNode("HP"))
-    laptop.add_child(TreeNode("Acer"))
-    laptop.add_child(TreeNode("Lenovo"))
-    laptop.add_child(TreeNode("Asus"))
-    laptop.add_child(TreeNode("MSI"))
-    laptop.add_child(TreeNode("Razer"))
-    laptop.add_child(TreeNode("Samsung"))
-    laptop.add_child(TreeNode("LG"))
-
 
     cellphone = TreeNode("Cell Phones")
     cellphone.add_child(TreeNode("iPhone"))
     cellphone.add_child(TreeNode("Google Pixel"))
     cellphone.add_child(TreeNode("Samsung"))
-    cellphone.add_child(TreeNode("LG"))
-    cellphone.add_child(TreeNode("OnePlus"))
-    cellphone.add_child(TreeNode("Motorola"))
-    cellphone.add_child(TreeNode("Nokia"))
-    cellphone.add_child(TreeNode("Sony"))
-    cellphone.add_child(TreeNode("HTC"))
-    cellphone.add_child(TreeNode("Huawei"))
-    cellphone.add_child(TreeNode("ZTE"))
-    cellphone.add_child(TreeNode("Xiaomi"))
-    cellphone.add_child(TreeNode("Oppo"))
-    cellphone.add_child(TreeNode("Vivo"))
 
     tv = TreeNode("Televisions")
     tv.add_child(TreeNode("Samsung"))
     tv.add_child(TreeNode("LG"))
     tv.add_child(TreeNode("Sony"))
     tv.add_child(TreeNode("Vizio"))
-    tv.add_child(TreeNode("TCL"))
-    tv.add_child(TreeNode("Hisense"))
-    tv.add_child(TreeNode("Sharp"))
     tv.add_child(TreeNode("Panasonic"))
-    tv.add_child(TreeNode("Toshiba"))
-    tv.add_child(TreeNode("Sanyo"))
-    tv.add_child(TreeNode("Philips"))
 
     root = TreeNode("Electronics")
     root.add_child(laptop)
@@ -76,5 +53,5 @@ def build_product_tree():
     return root # has value "Electronics" and children as laptop, cellphone, tv
 if __name__== '__main__':
     root = build_product_tree()
+    root.print_tree()
     
-    print(root.get_level())
