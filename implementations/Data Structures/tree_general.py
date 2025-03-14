@@ -6,15 +6,15 @@ class TreeNode:
 
     def add_child(self, child):
         child.parent = self
-        self.children.append(child)
+        self.children.append(child) # adding child to the children list of the parent node, big O(1) time complexity it's just appending to the list
     
     def print_tree(self):
         spaces = ' ' * self.get_level()
         prefix = spaces + "|--" if self.parent else ""
         print(prefix + self.data)
         if len(self.children) > 0:
-            for child in self.children:
-                child.print_tree()
+            for child in self.children: # accessing children of the node which is also a TreeNode object
+                child.print_tree() # The recursion works in big O(n) time complexity because we are traversing all the nodes in the tree
 
     def get_level(self):
         level = 0
@@ -22,7 +22,7 @@ class TreeNode:
         while p:
             level += 1
             p = p.parent
-        return level
+        return level # big O(n) time complexity because we are traversing the tree from the current node to the root node
 
 def build_product_tree():
     laptop = TreeNode("Laptops")
@@ -30,7 +30,7 @@ def build_product_tree():
     laptop.add_child(TreeNode("Surface"))
     laptop.add_child(TreeNode("Thinkpad"))
     laptop.add_child(TreeNode("Dell"))
-    laptop.add_child(TreeNode("HP"))
+    laptop.add_child(TreeNode("HP")) # big O(1) time complexity because we are just adding the child to the children list of the parent node
 
     cellphone = TreeNode("Cell Phones")
     cellphone.add_child(TreeNode("iPhone"))
