@@ -21,7 +21,7 @@ class TreeNode:
         p = self.parent
         while p:
             level += 1
-            p = p.parent
+            p = p.parent # moves up the tree to the parent node until it reaches the root node
         return level # big O(n) time complexity because we are traversing the tree from the current node to the root node
 
 def build_product_tree():
