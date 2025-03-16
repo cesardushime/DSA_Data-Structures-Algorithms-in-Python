@@ -1,7 +1,7 @@
-# Each node has at most 2 children in a binary tree.
+# Each node has at most 2 children in a binary search tree.
 # The left child is always less than the parent node.
 # The right child is always greater than the parent node.
-# Elements are always unique.
+# Elements are always unique (set property).
 
 class BinaryTreeNode:
     def __init__(self, data):
@@ -48,5 +48,18 @@ class BinaryTreeNode:
         # visit right tree
         if self.right:
             elements += self.right.pre_order_traversal()
+        return elements
+    
+    def post_order_traversal(self): 
+        elements = []
+        # visit left tree
+        if self.left:
+            elements += self.left.post_order_traversal()
+        # visit right tree
+        if self.right:
+            elements += self.right.post_order_traversal()
+        # visit base node
+        elements.append(self.data)
+
         return elements
     
