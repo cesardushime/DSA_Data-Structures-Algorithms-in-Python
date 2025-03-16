@@ -38,3 +38,15 @@ class BinaryTreeNode:
             elements += self.right.in_order_traversal()
         return elements
     
+    def pre_order_traversal(self):
+        elements = []
+        # visit base node
+        elements.append(self.data)
+        # visit left tree
+        if self.left:
+            elements += self.left.pre_order_traversal()
+        # visit right tree
+        if self.right:
+            elements += self.right.pre_order_traversal()
+        return elements
+    
