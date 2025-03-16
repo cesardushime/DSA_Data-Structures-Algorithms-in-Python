@@ -50,6 +50,13 @@ class BinaryTreeNode:
             elements += self.right.pre_order_traversal()
         return elements
     
+    def build_tree(elements):
+        root = BinaryTreeNode(elements[0])
+        for i in range(1, len(elements)):
+            root.add_child(elements[i]) # adds elements to the tree by making them children of the root node, while maintaining the binary search tree property
+        
+        return root
+    
     def post_order_traversal(self): 
         elements = []
         # visit left tree
@@ -62,4 +69,14 @@ class BinaryTreeNode:
         elements.append(self.data)
 
         return elements
+    
+
+if __name__ == '__main__':
+    elements = [17, 4, 1, 20, 9, 23, 18, 34]
+    elements_tree = BinaryTreeNode.build_tree(elements)
+
+    print(elements_tree.in_order_traversal()) # outputs [1, 4, 9, 17, 18, 20, 23, 34]
+    print(elements_tree.pre_order_traversal())  # outputs [17, 4, 1, 9, 20, 18, 23, 34]
+    print(elements_tree.post_order_traversal()) # outputs [1, 9, 4, 18, 34, 23, 20, 17]
+
     
