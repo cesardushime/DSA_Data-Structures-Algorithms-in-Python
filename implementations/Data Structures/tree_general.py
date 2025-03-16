@@ -1,7 +1,7 @@
 class TreeNode: 
     def __init__(self, data):
         self.data = data
-        self.children = []
+        self.children = [] # holds the children of each node in the tree, big O(1) time complexity
         self.parent = None
 
     def add_child(self, child):
