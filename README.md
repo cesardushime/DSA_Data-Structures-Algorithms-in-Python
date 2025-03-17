@@ -15,8 +15,14 @@ Welcome to my **Data Structures & Algorithms (DSA) journey** using Python! This 
 - [X] Stack (LIFO) & Queue (FIFO)
 
 ### 🔹 Week 3: Trees & Graphs
-- [ ] Binary Trees & Binary Search Trees
-- [ ] Graphs & BFS/DFS Traversals
+- [X] Binary Trees & Binary Search Trees
+- [X] Graphs & BFS/DFS Traversals
+- [X] Bubble Sort
+- [X] Selection Sort
+- [X] Insertion Sort
+- [X] Merge Sort
+- [X] Quick Sort
+- [X] Binary Search
 
 ### 🔹 Week 4: Advanced DSA & Interview Prep
 - [X] Dynamic Programming (Memoization, Tabulation)
