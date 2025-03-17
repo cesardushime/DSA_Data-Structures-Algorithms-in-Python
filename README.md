@@ -1,7 +1,7 @@
 # DSA: Data Structures & Algorithms in Python
 
 ## 📌 Overview
-Welcome to my **Data Structures & Algorithms (DSA) journey** using Python! This repository contains all my notes, code implementations, and resources as I learn and master DSA.
+Welcome to the **Data Structures & Algorithms (DSA) journey** using Python! This repository contains all the notes, code implementations, practices, and resources to help you master DSA.
 
 ## 📖 Course Progress
 ### 🔹 Week 1: Fundamentals
