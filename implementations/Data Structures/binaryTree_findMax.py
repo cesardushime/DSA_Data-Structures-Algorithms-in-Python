@@ -1,7 +1,8 @@
+# Implementing a binary search tree and finding the minimum element in the tree
 # Each node has at most 2 children in a binary search tree.
-# The left child is always less than the parent node.
-# The right child is always greater than the parent node.
-# Elements are always unique (set property).
+# The left most is always the minimum element in the tree.
+# The right most element is always the maximum element in the tree.
+
 
 class BinaryTreeNode:
     def __init__(self, data):
