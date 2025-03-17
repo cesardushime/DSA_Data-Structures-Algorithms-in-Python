@@ -41,10 +41,10 @@ class BinaryTreeNode:
     
 
 if __name__ == '__main__':
-    elements = [17, 4, 10, 20, 9, 23, 18, 34]
+    elements = [17, 4, 10, 20, 9, 23, 18, 2,34]
     elements_tree = BinaryTreeNode.build_tree(elements)
 
-    print(elements_tree.find_min()) 
+    print('The minimum is', elements_tree.find_min()) 
  
 
     
