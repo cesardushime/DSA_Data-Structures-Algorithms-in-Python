@@ -122,8 +122,6 @@ class BinaryTreeNode:
 
         return self
             
-
-
 if __name__ == '__main__':
     elements = [17, 4, 1, 20, 9, 23, 18, 34]
     elements_tree = BinaryTreeNode.build_tree(elements)
