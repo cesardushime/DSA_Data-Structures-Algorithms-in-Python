@@ -132,7 +132,7 @@ if __name__ == '__main__':
 
     # Testing delete method
     elements_tree.delete(9)
-    print("In order traversal after deleting 20:", elements_tree.in_order_traversal())
+    print("In order traversal after deleting 9:", elements_tree.in_order_traversal())
 
     
  
