@@ -129,9 +129,9 @@ if __name__ == '__main__':
     elements_tree = BinaryTreeNode.build_tree(elements)
 
     print("In order traversal gives this sorted list:", elements_tree.in_order_traversal())
-    
+
     # Testing delete method
-    elements_tree.delete(20)
+    elements_tree.delete(9)
     print("In order traversal after deleting 20:", elements_tree.in_order_traversal())
 
     
