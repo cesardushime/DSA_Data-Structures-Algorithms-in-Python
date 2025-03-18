@@ -35,11 +35,10 @@ def build_product_tree():
     hr_head = TreeNode("Gelsy (HR Head)")
     hr_head.add_child(TreeNode("Peter (Recruitment Manager)"))
     hr_head.add_child(TreeNode("Waqas (Policy Manager)"))
-    
+
     ceo.add_child(cto)
     ceo.add_child(hr_head)
    
-
     return root # has value "Electronics" and children as laptop, cellphone, tv
 if __name__== '__main__':
     root = build_product_tree()
