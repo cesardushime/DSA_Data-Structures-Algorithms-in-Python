@@ -40,7 +40,7 @@ def build_product_tree():
     ceo.add_child(cto)
     ceo.add_child(hr_head)
    
-    return root # has value "Electronics" and children as laptop, cellphone, tv
+    return ceo
 if __name__== '__main__':
     root = build_product_tree()
     root.print_tree()
