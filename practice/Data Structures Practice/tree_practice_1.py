@@ -14,7 +14,7 @@ class TreeNode:
         print(prefix + self.data)
         if self.children:
             for child in self.children:
-                child.print_tree()
+                child.print_tree() # big O(n) time complexity because we are traversing the tree from the current node to the leaf node
         
 
     def get_level(self):
@@ -26,9 +26,9 @@ class TreeNode:
         return level # big O(n) time complexity because we are traversing the tree from the current node to the root node
 
 def build_product_tree():
-    ceo = TreeNode("Nilupul (CEO)")
+    ceo = TreeNode("Nilupul (CEO)") # big O(1) time complexity because we are just creating a new node
 
-    cto = TreeNode("Chinmay (CTO)")
+    cto = TreeNode("Chinmay (CTO)") # big O(1) time complexity because we are just creating a new node
     cto.add_child(TreeNode("Dhaval (Infrastructure Head)"))
     cto.add_child(TreeNode("Abhijit (Application Head)"))
     cto.add_child(TreeNode("Amit (Cloud Head)"))
