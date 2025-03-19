@@ -12,9 +12,10 @@ class TreeNode:
         spaces = ' ' * self.get_level()
         prefix = spaces + "|--" if self.parent else ""
         print(prefix + self.data)
-        if len(self.children) > 0:
-            for child in self.children: # accessing children of the node which is also a TreeNode object
-                child.print_tree() # The recursion works in big O(n) time complexity because we are traversing all the nodes in the tree
+        if self.children:
+            for child in self.children:
+                child.print_tree()
+        
 
     def get_level(self):
         level = 0
