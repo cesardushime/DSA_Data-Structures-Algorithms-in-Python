@@ -37,4 +37,11 @@ def heapify(lst, i, upper):
             break
 
 def heapsort(lst):
-    pass
+    
+    for j in range((len(lst)-2)//2, -1, -1): # starting from the last parent node, we heapify the list
+        heapify(lst, j, len(lst))
+
+    for end in range(len(lst)-1, 0, -1): # starting from the end of the list, we swap the first element with the last element and heapify the list
+        swap(lst, 0, end)
+        heapify(lst, 0, end) # heapify the list from the first element to the end-1 element, because the last element makes the sorted list with each iteration
+        
