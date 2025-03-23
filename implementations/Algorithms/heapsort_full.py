@@ -38,10 +38,15 @@ def heapify(lst, i, upper):
 
 def heapsort(lst):
     
-    for j in range((len(lst)-2)//2, -1, -1): # starting from the last parent node, we heapify the list
-        heapify(lst, j, len(lst))
+    for j in range((len(lst)-2)//2, -1, -1): # starting from the last parent node, then we heapify the list
+        heapify(lst, j, len(lst))  # heapify the list from the parent node to the end of the list
 
     for end in range(len(lst)-1, 0, -1): # starting from the end of the list, we swap the first element with the last element and heapify the list
         swap(lst, 0, end)
         heapify(lst, 0, end) # heapify the list from the first element to the end-1 element, because the last element makes the sorted list with each iteration
-        
+
+    return lst
+
+if __name__ == '__main__':
+    arr = [12, 11, 13, 5, 6, 7, 9, 1, 2, 3]
+    print(heapsort(arr)) # [1, 2, 3, 5, 6, 7, 9, 11, 12, 13]
