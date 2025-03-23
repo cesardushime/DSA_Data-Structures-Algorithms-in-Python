@@ -8,7 +8,8 @@ def swap(lst, i, j):
 def heapify(lst, i, upper):
     # Move the topmost element to the bottom so that the remaining elment is the largest
     # This is a max heap
-
+    # Time Complexity: O(logn) because we are moving the element down the tree to its correct position, and the height of the tree is logn
+    
     while True: # continue until the element is in the correct position
         left, right = 2 * i + 1, 2 * i + 2
 
@@ -37,7 +38,8 @@ def heapify(lst, i, upper):
             break
 
 def heapsort(lst):
-    
+    # Time Complexity: O(nlogn) because we are heapifying the list in O(n) time and swapping in O(logn) time
+
     for j in range((len(lst)-2)//2, -1, -1): # starting from the last parent node, then we heapify the list
         heapify(lst, j, len(lst))  # heapify the list from the parent node to the end of the list
 
