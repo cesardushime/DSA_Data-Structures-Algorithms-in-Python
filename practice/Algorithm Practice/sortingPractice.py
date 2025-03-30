@@ -28,41 +28,45 @@ def sortColors(arr):
 
     return sortedColors
 
-# Sorting using the merge sort approach to sort the colors
+# Sorting 3 colors to be as per the order of Red, White, and Blue using Merge Sort
 def mergeSort(arr):
     if len(arr) > 1:
         mid = len(arr) // 2
-        left_half = arr[:mid]
-        right_half = arr[mid:]
+        L = arr[:mid]
+        R = arr[mid:]
 
-        mergeSort(left_half)
-        mergeSort(right_half)
+        mergeSort(L) 
+        mergeSort(R) # big O(nlogn) because the merge sort recursively divides the array into halves in log(n) time and merges them O(n) time.
 
         i = j = k = 0
 
-        while i < len(left_half) and j < len(right_half):
-            if left_half[i] < right_half[j]:
-                arr[k] = left_half[i]
+        # Mapping colors to priority: 'Red' < 'White' < 'Blue'
+        color_priority = {'Red': 0, 'White': 1, 'Blue': 2}
+
+        # Merge the two sorted halves based on color priority
+        while i < len(L) and j < len(R): 
+            if color_priority[L[i]] < color_priority[R[j]]:
+                arr[k] = L[i]
                 i += 1
             else:
-                arr[k] = right_half[j]
+                arr[k] = R[j]
                 j += 1
             k += 1
 
-        while i < len(left_half):
-            arr[k] = left_half[i]
+        # If there are remaining elements in L or R, add them to arr
+        while i < len(L):
+            arr[k] = L[i]
             i += 1
             k += 1
 
-        while j < len(right_half):
-            arr[k] = right_half[j]
+        while j < len(R):
+            arr[k] = R[j]
             j += 1
             k += 1
 
     return arr
 
-
 if __name__ == '__main__':
-    arr = ['Red', 'White', 'Blue', 'Red', 'White', 'Blue', 'Red', 'White', 'Blue']
-    print(sortColors(arr)) # Output: ['Red', 'Red', 'Red', 'White', 'White', 'White', 'Blue', 'Blue', 'Blue']
-    print(mergeSort(arr)) # Output: ['Blue', 'Blue', 'Blue', 'Red', 'Red', 'Red', 'White', 'White', 'White']
+    arr = ['White', 'Blue', 'Blue', 'White', 'Blue', 'Blue', 'Red', 'White', 'White', 'Blue']
+
+    print(mergeSort(arr))  # Output: ['Red', 'Red', 'Red', 'White', 'White', 'White', 'Blue', 'Blue', 'Blue']
