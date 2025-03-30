@@ -3,7 +3,7 @@
 
 
 def sortColors(arr):
-    # Create a dictionary to store the count of each color
+    
     colorCount = {}
 
     # Count the number of each color in the array
@@ -13,17 +13,16 @@ def sortColors(arr):
         else:
             colorCount[color] = 1
     
-    # Create a new array to store the sorted colors
+    # array to store the sorted colors
     sortedColors = []
-    # Add the colors to the new array in the correct order
 
-    # Add red to the new array
+
     if 'Red' in colorCount:
         sortedColors.extend(['Red'] * colorCount['Red'])
-    # Add white to the new array
+    
     if 'White' in colorCount:
         sortedColors.extend(['White'] * colorCount['White'])
-    # Add blue to the new array
+
     if 'Blue' in colorCount:
         sortedColors.extend(['Blue'] * colorCount['Blue'])
 
