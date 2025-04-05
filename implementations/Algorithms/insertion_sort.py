@@ -2,10 +2,12 @@ def insertion_sort(arr):
     
     for i in range(1, len(arr)):
         anchor = arr[i]
-        j = i-1
-        while j >= 0 and anchor < arr[j]:
+        j = i-1 # last index of the sorted part of the array
+        while j >= 0 and anchor < arr[j]: # if the anchor is less than the last element of the sorted part of the array
+            # shift the last element of the sorted part of the array to the right
             arr[j+1] = arr[j]
-            j -= 1
+            j -= 1 # move to the next element of the sorted part of the array until the anchor is in the right position
+        # insert the anchor in the right position in the sorted part of the array
         arr[j+1] = anchor # 
     return arr
 
