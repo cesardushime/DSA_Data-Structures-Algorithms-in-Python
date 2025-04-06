@@ -8,9 +8,9 @@ def mergeSort(arr):
     mergeSort(left) # recursively divide the left half of the array until we have single elements
     mergeSort(right) # recursively divide the right half of the array until we have single elements
 
-    merge2_sortedArrays(left, right, arr) # repeatedly merge the sorted arrays until we have a single sorted array
+    merge2_sortedArrays(left, right, arr) # merge the two sorted arrays into a single sorted array
 
-def merge2_sortedArrays(a,b, arr):
+def merge2_sortedArrays(a,b, arr): # and b are the two sorted arrays and arr is the merged array
     
     len_a = len(a)
     len_b = len(b)
@@ -25,11 +25,11 @@ def merge2_sortedArrays(a,b, arr):
             j += 1
         k += 1
     # handle the remaining elements when one of the arrays is exhausted
-    while i < len_a:
+    while i < len_a: # if there are remaining elements in a
         arr[k] = a[i]
         i += 1
         k += 1
-    while j < len_b:
+    while j < len_b: # if there are remaining elements in b
         arr[k] = b[j]
         j += 1   
         k += 1
