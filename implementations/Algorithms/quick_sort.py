@@ -1,11 +1,11 @@
 # Implementation of quick sort algorithm
-def quick_sort(arr, left, right):
+def quick_sort(arr, left, right): # big O(nlogn) because we are dividing the array into halves in log(n) time and partitioning it O(n) time.
     if left < right:
         partition_index = partition(arr, left, right)  # Get partition index
-        quick_sort(arr, left, partition_index - 1) 
-        quick_sort(arr, partition_index + 1, right)  
+        quick_sort(arr, left, partition_index - 1) # Recursively sort the left part until the left index is less than the partition index
+        quick_sort(arr, partition_index + 1, right)  # Recursively sort the right part until the partition index is less than the right index
 
-def partition(arr, left, right):
+def partition(arr, left, right): # Big O(n) because we are iterating through the array once to partition it
     pivot = arr[right]   
     i = left  # i starts at the leftmost element
     j = right - 1  # j starts at the element before the pivot
@@ -21,7 +21,7 @@ def partition(arr, left, right):
             i += 1
             j -= 1
     
-    # Place the pivot in its correct position as i has surpassed j
+    # Place the pivot in its correct position as i has surpassed j, the position of the pivot is at i
     arr[i], arr[right] = arr[right], arr[i]
     return i  # Return the partition index
 
