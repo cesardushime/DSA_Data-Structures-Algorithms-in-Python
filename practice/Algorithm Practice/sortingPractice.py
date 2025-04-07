@@ -28,8 +28,10 @@ def sortColors(arr):
 
     return sortedColors
 
-# Sorting 3 colors to be as per the order of Red, White, and Blue using Merge Sort
 def mergeSort(arr):
+    # Works by recursively dividing the colors into halves and merging them back together in sorted order by color priority.
+    # Time complexity: O(nlogn) because we are dividing the array into halves in log(n) time and merging them O(n) time.
+    # Space complexity: O(n) because we are using additional space to store the left and right halves of the array.
     if len(arr) > 1:
         mid = len(arr) // 2
         L = arr[:mid]
