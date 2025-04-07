@@ -40,8 +40,9 @@ def heapify(lst, i, upper):
 def heapsort(lst):
     # Time Complexity: O(nlogn) because we are heapifying the list in O(n) time and swapping in O(logn) time
 
-    for j in range((len(lst)-2)//2, -1, -1): # starting from the last parent node, then we heapify the list
-        heapify(lst, j, len(lst))  # heapify the list from the parent node to the end of the list
+    for j in range((len(lst)-2)//2, -1, -1): # starting from the last parent to the root, we heapify the list
+        # The last parent is at index (len(lst)-2)//2 because the last element is a leaf node and does not need to be heapified
+        heapify(lst, j, len(lst))  
 
     for end in range(len(lst)-1, 0, -1): # starting from the end of the list, we swap the first element with the last element and heapify the list
         swap(lst, 0, end)
