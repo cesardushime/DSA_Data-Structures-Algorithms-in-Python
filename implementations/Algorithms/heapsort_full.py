@@ -1,12 +1,12 @@
-# Will implement max heap and heapsort
-# Heapsort is an in-place algorithm
+
 # Time Complexity: O(nlogn)
 
 def swap(lst, i, j):
     lst[i], lst[j] = lst[j], lst[i]
 
-def heapify(lst, i, upper):
-    # Move the topmost element to the bottom so that the remaining elment is the largest
+def heapify(lst, i, upper): 
+    # upper is the length of the list, which is the upper bound of the list and i is the index of the element to be heapified
+    # This function is used to heapify the list from the index i to the end of the list
     # This is a max heap
     # Time Complexity: O(logn) because we are moving the element down the tree to its correct position, and the height of the tree is logn
     
@@ -14,7 +14,7 @@ def heapify(lst, i, upper):
         left, right = 2 * i + 1, 2 * i + 2
 
         if max(left, right) < upper: # if left and right are within the bounds of the list, then we can compare them
-            if lst[i] >= max(lst[left], lst[right]): # if the current element is greater than the left and right children, then we are done
+            if lst[i] >= max(lst[left], lst[right]): # if the parent is greater than both children, then we are done
                 break
             if lst[left] > lst[right]: 
                 swap(lst, i, left) 
