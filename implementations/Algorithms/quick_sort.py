@@ -1,6 +1,6 @@
 # Implementation of quick sort algorithm
 def quick_sort(arr, left, right): # big O(nlogn) because we are dividing the array into halves in log(n) time and partitioning it O(n) time.
-    if left < right:
+    if left < right: 
         partition_index = partition(arr, left, right)  # Get partition index
         quick_sort(arr, left, partition_index - 1) # Recursively sort the left part until the left index is less than the partition index
         quick_sort(arr, partition_index + 1, right)  # Recursively sort the right part until the partition index is less than the right index
