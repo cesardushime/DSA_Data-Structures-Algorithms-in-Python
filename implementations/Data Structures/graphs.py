@@ -1,27 +1,29 @@
+# Flight Routes Graph
+# This code implements a graph to represent flight routes between cities.
+
+
 class Graph:
     def __init__(self, edges):
         self.edges = edges
-        self.graph_dict = {}
-        for start, end in edges:
-            if start in self.graph_dict:
-                self.graph_dict[start].append(end)
-            else:
-                self.graph_dict[start] = [end]
-        print("Graph Dict:", self.graph_dict)
-    
-    def get_paths(self, start, end, path=[]):
-        path = path + [start]
-        if start == end:
-            return [path]
 
-if __name__ == '__main__':
-    routes = [
+
+
+
+if __name__ == "__main__":
+    # Example routes between cities
+    routes = {
         ("Mumbai", "Paris"),
-        ("Mumbai", "Dubai"),
-        ("Paris", "Dubai"),
+        ("Mumbai", "New York"),
         ("Paris", "New York"),
-        ("Dubai", "New York"),
-        ("New York", "Toronto")
-    ]
+        ("Paris", "London"),
+        ("London", "New York"),
+        ("London", "Tokyo"),
+        ("Tokyo", "Mumbai"),
+        ("Tokyo", "Paris"),
+        ("Tokyo", "London"),
+        ("New York", "Tokyo")}
+    
 
-    route_graph = Graph(routes)
+  
+
+
