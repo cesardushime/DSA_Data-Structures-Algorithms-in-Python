@@ -15,7 +15,26 @@ class Graph:
 
         print("Graph initialized with edges:", self.graph_dict)
 
+    def get_paths(self, start, end, path=[]):
 
+        path = path + [start]
+        if start == end:
+            return [path]
+        
+        if start not in self.graph_dict:
+            return []
+        
+        paths = []
+        for node in self.graph_dict[start]: # Traverse the graph by going through the edges and nodes to find the path
+            if node not in path: # Avoid cycles in the path (path is a list of nodes already visited)
+                new_paths = self.get_paths(node, end, path) # path is the same as the previous path, but with the new node added to it
+
+                for new_path in new_paths:
+                    if new_path not in path: # Avoid cycles in the path
+                        paths.append(new_path)
+
+        return paths
+        
 
 if __name__ == "__main__":
     # Tuple of flight routes (start, end)
@@ -30,6 +49,8 @@ if __name__ == "__main__":
     )
     
     route_graph = Graph(routes)
+
+    
 
 
 
